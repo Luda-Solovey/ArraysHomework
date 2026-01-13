@@ -31,8 +31,6 @@ namespace ArraysParamsHW
                 sum += employeesSalaries[i];
             }
             avgSalary = sum / employeesSalaries.Length;
-
-            Console.WriteLine($"MinSalary is {minSalary}, avgSalary is {avgSalary}, maxSalary is {maxSalary}");
         }
 
         //метод повертає мінімальну, середню та максимальну зарплату через Linq
@@ -41,7 +39,6 @@ namespace ArraysParamsHW
             minSalary = employeesSalaries.Min();
             maxSalary = employeesSalaries.Max();
             avgSalary = employeesSalaries.Average();
-            Console.WriteLine($"LinqMethod. MinSalary is {minSalary}, avgSalary is {avgSalary}, maxSalary is {maxSalary}");
         }
     }
 }
