@@ -10,8 +10,10 @@ namespace ArraysParams
 
             ArraysParamsHW.Employees employees = new ArraysParamsHW.Employees(); //чомусь не працює без простору імен? (перейменовувала проект, можливо через це)
             employees.ReturnMinMaxAvgSalaries(out double minSalary, out double avgSalary, out double maxSalary, employeesSalaries);
+            Console.WriteLine($"MinSalary is {minSalary}, avgSalary is {avgSalary}, maxSalary is {maxSalary}");
 
             employees.ReturnMinMaxSalariesLinq(out double minSalaryLinq, out double maxSalaryLinq, out double avgSalaryLinq, employeesSalaries);
+            Console.WriteLine($"Method Linq. MinSalary is {minSalary}, avgSalary is {avgSalary}, maxSalary is {maxSalary}");
         }
     }
 }
