@@ -1,4 +1,9 @@
 <Solution>
-  <Project Path="ArraysHomework/ArraysVocabularyHW.csproj" />
-  <Project Path="ArraysParams/ArraysParamsHW.csproj" />
+  <Project Path="5SubArray/5SubArray.csproj" Id="f07558c6-d900-432f-b82d-9be98aee15ad" />
+  <Project Path="ArraysHomework/2ArraysVocabularyHW.csproj" />
+  <Project Path="ArraysParams/1ArraysParamsHW.csproj" />
+  <Project Path="ChessBoard/ChessBoard.csproj" Id="d771d100-2791-452d-8daa-7e59d5cf5c48" />
+  <Project Path="HwArrays2/3HwArrays.csproj" Id="966e89dc-2ff3-4b92-98ed-d79c99e806c8" />
+  <Project Path="Params/Params.csproj" Id="52a5ffb9-3291-4527-b09f-8d8385724399" />
+  <Project Path="ReverseArray/4ReverseArray.csproj" Id="acb15781-2087-4f8d-b613-705a3c20aa0e" />
 </Solution>

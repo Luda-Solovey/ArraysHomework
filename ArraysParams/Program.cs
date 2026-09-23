@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace ArraysParams
+﻿namespace ArraysParams
 {
     internal class Program
     {
