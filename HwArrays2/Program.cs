@@ -2,10 +2,15 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            int[] array = [89, 56, 12, 36];
+            //Завдання 2
+            //Використовуючи Visual Studio, створіть проєкт за шаблоном ConsoleApplication.Створіть масив розміру N елементів, заповнити його довільними цілими значеннями(розмір масиву задає користувач). 
+            //Виведiть на екран: найбільше значення масиву, найменше значення масиву, загальну суму всіх елементів, середнє арифметичне всіх елементів, виведіть усі непарні значення. 
 
+
+            int[] array = [89, 56, 12, 36];
 
             //1 Min value
             int min = array[0];
@@ -82,7 +87,7 @@
 
             for (int i = 0; i < oddArray.Length; i++)
             {
-                   Console.WriteLine($"Odd values are: {oddArray[i]}");
+                Console.WriteLine($"Odd values are: {oddArray[i]}");
             }
         }
     }

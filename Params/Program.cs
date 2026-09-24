@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+            //Домашнє завдання 2 
+            //Є метод що приймає масив числел з params віддає в out параметрах - масимальне значення мінімальне і середнє
+
             void ReturnMinMaxAvg(out int min, out int max, out decimal avg, params int[] input)
             {
                 if (input.Length == 0)
