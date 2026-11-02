@@ -5,8 +5,11 @@ namespace ChessBoard
     internal class Program
     {
         static void Main(string[] args)
-        {//Домашнє завдання 3 створіть шахову дошку 
+        {
+            Console.OutputEncoding = Encoding.Unicode;
 
+            //Домашнє завдання 3 
+            //Створіть шахову дошку 
             //розташуйте на доштці всі фігури як початковий розкелад в шахи. Тобто заповніть 4 лінії фігурами. перші дві і останні дві.ПРосто доробіть той приклад що в репозиторії. 
             //1 - Заповнити тсартовіий розклад. 
             //2 вивести кожну фігуру відділити палочкою чикл в циклі
@@ -20,67 +23,56 @@ namespace ChessBoard
             //8 - рядок | Тура | Ферзь
 
             //Пішаки заповніть 2 циклами
-
             //Створіть метод по виводу всієї дошки просто клітика E4 -Пішак, як немає пишете Пусто
 
-            Console.OutputEncoding = Encoding.Unicode;
 
+
+            //1.1 Заповнюємо шахову дошку порожніми клітинами
             string[,] chessBoard = new string[8, 8];
-
-
-            // 1 Заповнюємо шахову дошку
-
-            //1.1 порожні клітини
-            for (int row = 2; row < 6; row++)
+            for (int row = 0; row < chessBoard.GetLength(0); row++)
             {
-                for (int column = 0; column < 8; column++)
+                for (int column = 0; column < chessBoard.GetLength(1); column++)
                 {
-                    chessBoard[row, column] = "Пустота";
+                    chessBoard[row, column] = "Пусто";
                 }
             }
 
             //1.2 заповнюємо пішаки
-            for (int column = 0; column < 8; column++)
+            for (int column = 0; column < chessBoard.GetLength(1); column++)
             {
                 chessBoard[1, column] = "Пішак";
                 chessBoard[6, column] = "Пішак";
             }
 
-            for (int row = 0; row < 8; row++)
+            //1.3 заповнюємо основні фігури
+            string[] mainFigures = ["Тура", "Кінь", "Слон", "Королева", "Король", "Слон", "Кінь", "Тура"];
+
+            for (int i = 0; i < chessBoard.GetLength(0); i++)
             {
-                for (int column = 0; column < 8; column++)
+                chessBoard[0, i] = mainFigures[i];
+                chessBoard[7, i] = mainFigures[i];
+            }
+
+            //1.4 вивід шахової дошки на екран
+            for (int row = 0; row < chessBoard.GetLength(0); row++)
+            {
+                for (int column = 0; column < chessBoard.GetLength(1); column++)
                 {
                     Console.Write("{0} | ", chessBoard[row, column]);
                 }
                 Console.WriteLine();
             }
 
-            //1.3 заповнюємо основні фігури
-
-            string[] mainFigures = ["Тура", "Кінь", "Слон", "Ферзь", "Король", "Слон", "Кінь", "Тура"];
-
-            for (int i = 0; i < chessBoard.Length; i++)
+            //1.5 Створіть метод по виводу всієї дошки просто клітика E4 -Пішак, як немає пишете Пусто
+            for (int i = 0; i < chessBoard.GetLength(0); i++)//рядок
             {
-                chessBoard[0, i] = mainFigures[i];
-
-                chessBoard[7, i] = mainFigures[i];
+                for (int j = 0; j < chessBoard.GetLength(1); j++)//стовпчик
+                {
+                    char columnLetter = (char)('A' + j); // Перетворюємо індекс стовпчика на букву A-H (символ А має код 65 в ASCII)
+                    int rowNumber = 8 - i; // Перетворюємо індекс рядка на номер (1-8)
+                    Console.WriteLine($" {columnLetter}{rowNumber} - {chessBoard[i, j]}");
+                }
             }
-
-            Console.WriteLine("Введіть розташування фігури");
-
-            string enteredValue = Console.ReadLine();
-
-            //ToDo: доробити частину: Створіть метод по виводу всієї дошки просто клітика E4 -Пішак, як немає пишете Пусто
-
-            //string position = "E2";
-
-            //int col = position[0] - 'A'; // E - A = 4
-            //int row = position[1] - '1'; // 2 - 1 = 1
-
-            //Console.WriteLine($"row = {row}, col = {col}");
-
-
-
         }
     }
 }
