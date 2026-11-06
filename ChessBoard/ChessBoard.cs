@@ -4,29 +4,35 @@
     {
         public static string[,] CreateChessBoardAndFillFigures()
         {
-            //1.1 Заповнюємо шахову дошку порожніми клітинами
+            //1.1 Заповнюємо шахову дошку
             string[,] chessBoard = new string[8, 8];
+
+            string[] mainFigures = { "Тура", "Кінь", "Слон", "Королева", "Король", "Слон", "Кінь", "Тура" };
+
             for (int row = 0; row < chessBoard.GetLength(0); row++)
             {
                 for (int column = 0; column < chessBoard.GetLength(1); column++)
                 {
-                    chessBoard[row, column] = "Пусто";
+                    switch (row)
+                    {
+                        case 0:
+                        case 7:
+                            chessBoard[0, column] = mainFigures[column];
+                            chessBoard[7, column] = mainFigures[column];
+                            break;
+
+                        case 1:
+                        case 6:
+                            chessBoard[1, column] = "Пішак";
+                            chessBoard[6, column] = "Пішак";
+                            break;
+
+                        default:
+                            chessBoard[row, column] = "Пусто";
+                            break;
+                    }
                 }
             }
-            //1.2 заповнюємо пішаки
-            for (int column = 0; column < chessBoard.GetLength(1); column++)
-            {
-                chessBoard[1, column] = "Пішак";
-                chessBoard[6, column] = "Пішак";
-            }
-            //1.3 заповнюємо основні фігури
-            string[] mainFigures = { "Тура", "Кінь", "Слон", "Королева", "Король", "Слон", "Кінь", "Тура" };
-            for (int i = 0; i < chessBoard.GetLength(0); i++)
-            {
-                chessBoard[0, i] = mainFigures[i];
-                chessBoard[7, i] = mainFigures[i];
-            }
-
             return chessBoard;
         }
 
